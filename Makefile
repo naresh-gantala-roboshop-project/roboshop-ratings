@@ -7,7 +7,8 @@ run:
 	MYSQL_HOST=localhost python app.py
 
 docker-build:
-	docker build -t roboshop-ratings .
+	docker build -t nareshroboshop.azurecr.io/roboshop-ratings .
+	docker push nareshroboshop.azurecr.io/roboshop-ratings
 
 db-init:
 	mysql -h $${MYSQL_HOST:-localhost} -u root -pRoboShop@1 < db/app-user.sql
